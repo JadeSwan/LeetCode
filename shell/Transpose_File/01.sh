@@ -1,5 +1,28 @@
 # Read from the file file.txt and print its transposed content to stdout.
 #!/bin/bash
+#
+# https://leetcode.com/problems/transpose-file/
+#
 
-awk 'BEGIN{c=0} {mt[$1]=$2;c+=1} \
-END{for(i in mt){ printf("%s", i)} ; if(c>1){printf("\n")}; for(i in mt){ printf("%s",mt[i]); } }' file.txt
+awk 'BEGIN{r=0;i=0;c=1}
+{
+  r+=1
+  for(i=1;i<=NF;i++){
+    ar[c++]=$i
+  }
+}
+END{
+  c--
+  for(i=1;i<=NF;i++){
+    for(j=1; j<=r; j++){
+      idx= (j-1) * NF + i
+      printf("%s", ar[idx])
+      if( j < r && r > 1 ){
+        printf(" ")
+      }
+    }
+    if(NF > 1 ){
+      printf("\n")
+    }
+  }
+}' file.txt
