@@ -1,1 +1,1 @@
-# shell problems from (leetcode)[https://leetcode.com/problemset/shell/]
+# shell problems from [leetcode](https://leetcode.com/problemset/shell/)
