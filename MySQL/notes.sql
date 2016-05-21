@@ -33,6 +33,3 @@ BEGIN
   );
 END //
 DELIMITER ;
-
-
-lftp csi-fraud-detect.log*.gz ftp://logback.cnsuning.com/2015-12-12/CSIFRD/20151212/
